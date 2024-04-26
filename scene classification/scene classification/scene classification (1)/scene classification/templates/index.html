@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification Website</title>
+    <link rel='stylesheet' href={{url_for('static' , filename = 'css/style.css')}}>
+</head>
+<body>
+    <header>
+        <h1>SCENE ClASSIFICATION</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/classification">Classification</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Welcome to our Image Classification Website</h2>
+            <p>Upload an image and let us classify it for you!</p>
+            <a href="/classification" class="btn">Try Classification</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Image Classification Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

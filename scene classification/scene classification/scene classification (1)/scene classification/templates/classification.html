@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene Classification</title>
+    <link rel='stylesheet' href={{url_for('static' , filename = 'css/style.css')}}>
+    
+</head>
+<body>
+    <header>
+        <h1>Scene Classification</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/classification">Classification</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="classification">
+            <h2>Upload Image for Classification</h2>
+            <form id="upload-form" action="/classification" method="POST" enctype="multipart/form-data">
+                <input type="file" id="image-input" name="image" accept="image/*" required>
+                <button type="submit" class="btn">Classify Image</button>
+            </form>
+            <div id="image-preview">
+                {% if image_path %}
+                    <img src="{{ image_path }}" alt="Uploaded Image" style="max-width: 300px;">
+                {% endif %}
+            </div>
+            <div id="classification-results">
+                {% if predictions %}
+                    <h2>The uploaded Image is: {{ predictions }}</h2>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Image Classification Website. All rights reserved.</p>
+    </footer>
+    <!-- Include any necessary scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
